@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MOBreakingBadAPI_Example' do
+  pod 'MOBreakingBadAPI', :path => '../'
+
+  target 'MOBreakingBadAPI_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
