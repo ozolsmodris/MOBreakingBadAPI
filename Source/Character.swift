@@ -9,11 +9,11 @@
 import Foundation
 
 public struct Character: Decodable {
-    let id: Int
-    let name: String
-    var birthday: String
-    let occupation: [String]
-    let nickname: String
+    public let id: Int
+    public let name: String
+    public var birthday: String
+    public let occupation: [String]
+    public let nickname: String
     
     enum CodingKeys: String, CodingKey {
         case id = "char_id"
