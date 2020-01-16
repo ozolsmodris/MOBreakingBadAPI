@@ -13,6 +13,8 @@ public class MOBreakingBadAPI {
     
     public init() {}
 
+    /// Returns random quote from random Braking Bad character
+    /// - Parameter completion: completion returns Quote structure
     public func getRandomQuote(completion: @escaping (Quote?) -> Void) {
         let endpoint = URL(string: "\(url)/quote/random")!
         
@@ -30,6 +32,10 @@ public class MOBreakingBadAPI {
         }
     }
     
+    /// Returns random quote from character of Braking Bad
+    /// - Parameters:
+    ///   - author: Fill name of character from Braking Bad "Walter White"
+    ///   - completion: returns Quote if character has quote returns nil fix there is not quotes
     public func getQuote(from author: String, completion: @escaping (Quote?) -> Void) {
         let endpoint = URL(string: "\(url)/quote/random")!
         NetworkController.performRequest(for: endpoint, httpMethod: .Get, urlParameters: ["author": author]) { (data, error) in
@@ -45,6 +51,8 @@ public class MOBreakingBadAPI {
         }
     }
     
+    /// Returns all characters from Braking Bad
+    /// - Parameter completion: Returns array of Character else return empty arrray
     public func getAllCharacters(completion: @escaping ([Character]) -> Void) {
         let endpoint = URL(string: "\(url)/characters")!
         NetworkController.performRequest(for: endpoint, httpMethod: .Get) { (data, error) in

@@ -8,6 +8,11 @@
 
 import Foundation
 
+/// Quote:
+/// - id
+/// - quote
+/// - author
+/// - series
 public struct Quote: Decodable {
     public let id: Int
     public let quote: String

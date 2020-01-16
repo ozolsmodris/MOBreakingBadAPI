@@ -8,6 +8,12 @@
 
 import Foundation
 
+/// Character:
+/// - id
+/// - name
+/// - birthday
+/// - occupation
+/// - nickname
 public struct Character: Decodable {
     public let id: Int
     public let name: String

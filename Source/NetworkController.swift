@@ -18,6 +18,15 @@ class NetworkController {
         case Delete = "DELETE"
     }
     
+    /**
+     Performs API Request and returns Data
+     
+     - Parameter url: URL address of API
+     - Parameter httpMethod: .Get .Put .Post .Patch .Delete
+     - Parameter urlParameters: Adds parameters with values to your URL
+     - Parameter body: Contains Data for .Put .Post .Path
+     - Parameter completion: On completing retuns Data object
+    */
     static func performRequest(for url: URL,
                                httpMethod: HTTPMethod,
                                urlParameters: [String: String]? = nil,
@@ -36,6 +45,12 @@ class NetworkController {
         dataTask.resume()
     }
     
+    /**
+     Adds parameters to URL
+     
+     - Parameter parameters: Adds parameters with values to your URL
+     - Parameter url: URL address of API
+    */
     static func url(byAdding parameters: [String: String]?, to url: URL) -> URL {
         
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
