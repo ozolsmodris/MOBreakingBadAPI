@@ -1,28 +1,79 @@
 import XCTest
 import MOBreakingBadAPI
+@testable import MOBreakingBadAPI
 
 class Tests: XCTestCase {
     
+    var api: MOBreakingBadAPI!
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        api = MOBreakingBadAPI()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
+    func testRandomQuote() {
+        let expectation = self.expectation(description: "Wait API Response")
+        var quote: Quote?
+        api.getRandomQuote { (result) in
+            quote = result
+            expectation.fulfill()
         }
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertTrue((quote as Any) is Quote)
+        XCTAssertTrue(type(of: quote!.id) == Int.self )
+        XCTAssertTrue(type(of: quote!.author) == String.self)
+        XCTAssertTrue(type(of: quote!.quote) == String.self)
     }
+    
+    func testRandomQuoteFromJessePinkman() {
+        let expectation = self.expectation(description: "Wait API Response")
+        var quote: Quote?
+        api.getQuote(from: "Jesse Pinkman") { (result) in
+            quote = result
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertTrue((quote as Any) is Quote)
+        XCTAssertTrue(type(of: quote!.id) == Int.self )
+        XCTAssertEqual(quote?.author, "Jesse Pinkman")
+        XCTAssertTrue(type(of: quote!.quote) == String.self)
+    }
+    
+    func testRandomQuoteFromNotExisting() {
+        let expectation = self.expectation(description: "Wait API Response")
+        var quote: Quote?
+        api.getQuote(from: "Not Existing") { (result) in
+            quote = result
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertNil(quote)
+    }
+    
+    func testRandomQuoteCharacterWithSpecialCharacters() {
+        let expectation = self.expectation(description: "Wait API Response")
+        var quote: Quote?
+        api.getQuote(from: "£Cash* $Money%") { (result) in
+            quote = result
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertNil(quote)
+    }
+    
+    func testGetAllCharacters() {
+        let expectation = self.expectation(description: "Wait API Response")
+        var characters: [Character] = []
+        api.getAllCharacters { (results) in
+            characters = results
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10, handler: nil)
+        XCTAssertTrue(type(of: characters) == [Character].self)
+    }
+
     
 }
