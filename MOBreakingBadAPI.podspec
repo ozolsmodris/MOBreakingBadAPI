@@ -21,14 +21,15 @@ Pod::Spec.new do |s|
 'Breaking Bad API CocoaPod. To retrieve characters and quotes from them using API'
                        DESC
 
-  s.homepage         = 'https://github.com/Modris Ozols/MOBreakingBadAPI'
+  s.homepage         = 'https://github.com/ozolsmodris/MOBreakingBadAPI'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Modris Ozols' => 'modris.ozols@testdevlab.com' }
-  s.source           = { :git => 'https://github.com/Modris Ozols/MOBreakingBadAPI.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/ozolsmodris/MOBreakingBadAPI.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '13.2'
+  s.swift_versions = "5"
 
   s.source_files = 'MOBreakingBadAPI/Classes/**/*'
   
