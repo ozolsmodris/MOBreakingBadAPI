@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '13.2'
   s.swift_versions = "5"
 
-  s.source_files = 'MOBreakingBadAPI/Classes/**/*'
+  s.source_files = 'MOBreakingBadAPI/Source/**/*'
   
   # s.resource_bundles = {
   #   'MOBreakingBadAPI' => ['MOBreakingBadAPI/Assets/*.png']
