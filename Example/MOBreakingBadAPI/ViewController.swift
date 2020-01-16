@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MOBreakingBadAPI
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var example_label: UILabel!
+    var apiController = MOBreakingBadAPI()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

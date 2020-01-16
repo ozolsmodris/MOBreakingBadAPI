@@ -11,6 +11,8 @@ import UIKit
 public class MOBreakingBadAPI {
     let url: String = "https://www.breakingbadapi.com/api"
     
+    public init() {}
+
     public func getRandomQuote(completion: @escaping (Quote?) -> Void) {
         let endpoint = URL(string: "\(url)/quote/random")!
         
