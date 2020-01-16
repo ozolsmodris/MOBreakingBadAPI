@@ -1,0 +1,16 @@
+PODS:
+  - MOBreakingBadAPI (0.1.0)
+
+DEPENDENCIES:
+  - MOBreakingBadAPI (from `../`)
+
+EXTERNAL SOURCES:
+  MOBreakingBadAPI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MOBreakingBadAPI: 33a96d1662060b4f30fd15000befc7464bcda24c
+
+PODFILE CHECKSUM: 2f93139487ca3a5f98262cf188314cd54c67b98d
+
+COCOAPODS: 1.8.4

@@ -1,0 +1,22 @@
+{
+  "name": "MOBreakingBadAPI",
+  "version": "0.1.0",
+  "summary": "A short description of MOBreakingBadAPI.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Modris Ozols/MOBreakingBadAPI",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Modris Ozols": "modris.ozols@testdevlab.com"
+  },
+  "source": {
+    "git": "https://github.com/Modris Ozols/MOBreakingBadAPI.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "MOBreakingBadAPI/Classes/**/*"
+}

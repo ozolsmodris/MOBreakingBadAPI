@@ -1,0 +1,6 @@
+framework module MOBreakingBadAPI {
+  umbrella header "MOBreakingBadAPI-umbrella.h"
+
+  export *
+  module * { export * }
+}
