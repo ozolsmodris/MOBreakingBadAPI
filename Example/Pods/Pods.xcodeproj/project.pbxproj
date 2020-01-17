@@ -433,7 +433,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10DC909B649CB6BDD31B27D24E90DEF0 /* MOBreakingBadAPI.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -467,7 +467,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 10DC909B649CB6BDD31B27D24E90DEF0 /* MOBreakingBadAPI.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
